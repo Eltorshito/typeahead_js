@@ -18,3 +18,17 @@ function findMatches(searchTerm, citiesArray) {
     return matches; 
 }
 
+function numberWithCommas (x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");  
+}
+
+function displayMatches() {
+    const matches = findMatches(searchInput.value, citiesData);
+    const html = matches.map(place => {
+        const regex = new regex(this.value, "gi");
+        const cityName = place.city.replace(regex, `<span class="hl"></span>`);
+        const stateName = place.state.replace(regex, `<span class="hl"></span>`);
+        return `<li>${cityName}, ${stateName}</li>`
+    }).join('');
+
+}
