@@ -11,9 +11,9 @@ fetch('https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf2
 .then(data =>
     citiesData.push(...data)
 );
-
+console.log(citiesData);
 function findMatches(searchTerm, citiesArray) {
-    const regex = new RegExp(`^${searchTerm}`, "gi"); //Changer le this.value //
+    const regex = new RegExp(`${searchTerm}`, "gi"); //Changer le this.value //
     const matches = citiesArray.filter(place => {
         return place.city.match(regex) || place.state.match(regex);
     });
